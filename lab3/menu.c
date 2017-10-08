@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include "linklist.h"
-int help();
+int menu();
 int quit();
 #define CMD_MAX_LEN 128
 #define DESC_LEN 1024
@@ -32,7 +32,7 @@ int main()
         }
     }
 }
-int help()
+int menu()
 {
     ShowAllCmd(head);
     return 0;
