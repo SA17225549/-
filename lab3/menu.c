@@ -8,8 +8,8 @@ int quit();
 #define CMD_NUM 10
 static tDataNode head[]=
 {
-    {"help",   "this is help cmd!",help,&head[1]},
-    {"version","menu program v1.0",NULL,&head[2]},
+    {"menu",   "this is menu cmd!",menu,&head[1]},
+    {"version","menu program v2.0",NULL,&head[2]},
     {"quit",   "quit from menu",quit,NULL}
 };
 int main()
