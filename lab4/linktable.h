@@ -4,16 +4,16 @@
 #define FAILURE (-1)
 typedef struct LinkTableNode{
 struct LinkTableNode *pNext;
-}tLinkTableNode;
+}tLinkTableNode;//节点数据结构
 typedef struct LinkTable{
 tLinkTableNode *pHead;
 tLinkTableNode *pTail;
 int SumOfNode;
-}tLinkTable;
-tLinkTable *CreateLinkTable();
-int DeleteLinkTable(tLinkTable *pLinkTable);
-int AddLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode *pNode);
-int DeleteLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode *pNode);
-tLinkTableNode *GetLinkTableHead(tLinkTable *pLinkTable);
-tLinkTableNode *GetNextLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode *pNode);
+}tLinkTable;//链表数据结构
+tLinkTable *CreateLinkTable();//创建链表
+int DeleteLinkTable(tLinkTable *pLinkTable);//删除链表
+int AddLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode *pNode);//添加节点
+int DeleteLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode *pNode);//删除节点
+tLinkTableNode *GetLinkTableHead(tLinkTable *pLinkTable);//获取链表头节点
+tLinkTableNode *GetNextLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode *pNode);//获取下一节点
 #endif
