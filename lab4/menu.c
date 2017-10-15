@@ -9,11 +9,11 @@ int quit();
 typedef struct DataNode
 {
     tLinkTableNode *pNext;
-    char* cmd;
-    char* desc;
-    int   (*handler)();
+    char* cmd;//指令名
+    char* desc;//指令描述
+    int   (*handler)();//函数句柄
     struct DataNode *next;
-}tDataNode;
+}tDataNode;//定义命令结构体
 tDataNode *FindCmd(tLinkTable *head, char *cmd)
 {
     tDataNode* pNode=(tDataNode*)GetLinkTableHead(head);
@@ -26,7 +26,7 @@ tDataNode *FindCmd(tLinkTable *head, char *cmd)
     pNode=(tDataNode*)GetNextLinkTableNode(head,(tLinkTableNode*)pNode);
     }
     return NULL;
-}   
+}   //从链表头寻找命令
 int ShowAllCmd(tLinkTable* head)
 {
     tDataNode *pNode=(tDataNode*)GetLinkTableHead(head);
@@ -36,7 +36,7 @@ int ShowAllCmd(tLinkTable* head)
     pNode =(tDataNode*)GetNextLinkTableNode(head,(tLinkTableNode*)pNode);
     }
     return 0;
-}  
+}  //显示所有命令
 int InitMenuData(tLinkTable ** ppLinkTable)
 {
     *ppLinkTable=CreateLinkTable();
@@ -56,11 +56,11 @@ int InitMenuData(tLinkTable ** ppLinkTable)
     pNode->handler=quit;
     AddLinkTableNode(*ppLinkTable,(tLinkTableNode *)pNode);
     return 0;
-}
+}//命令数据填充
 tLinkTable* head=NULL;
 int main()
 {
-    InitMenuData(&head);
+    InitMenuData(&head);//取头节点指针，初始化链表
     while(1)
     {
         char cmd[CMD_MAX_LEN];
