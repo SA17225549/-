@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "linktable.h"
-int help();
-int quit();
 #define CMD_MAX_LEN 128
 #define DESC_LEN 1024
 #define CMD_NUM 10
+int help();
+int quit();
 typedef struct DataNode
 {
     tLinkTableNode *pNext;
